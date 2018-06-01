@@ -5,3 +5,33 @@
 #contenedor{
 	visibility: hidden;
 }
+h1{
+	box-sizing: border-box;
+	align-self: center;
+	width: 95%;
+	height: 150px;
+	padding-top: 38px;
+	font-family: sans-serif;
+	color: white;
+	text-align: center;
+	background-image: url(https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2015/08/Laboratoria-4.jpg?fit=980%2C551&quality=100&ssl=1);
+	font-stretch: extra-condensed;
+	font-size: 80px;
+
+}
+
+#bienvenida{
+	background-image: url(https://fondify.mx/proyectos/241/foto/Laboratoria_Isotipo%20CodeAcademy.png);
+	align-content: center;
+	box-sizing: border-box;
+	text-align: center;
+	width: 50%;
+	height: 200px;
+	color: black;
+	font-size: 40px;
+	padding: 10px;
+	font-family: sans-serif;
+	font-stretch: extra-condensed;
+	align-self: center;
+	margin: 120px 300px;
+}

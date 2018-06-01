@@ -39,37 +39,48 @@ function trivia(){
 
 function comprobar(){
 
-	var mostrar = document.createElement("div");
 	var posicionScore = document.getElementById("contenedor");
+	var mostrar = document.createElement("div");
+	var mostrar2 = document.createElement("div");
+	var mostrar3 = document.createElement("div");
+	var mostrar4 = document.createElement("div");
+
+
 
 	document.getElementById("contenedor").style.visibility = "visible";
 	if (document.getElementById("answer3").checked) {
-		resultadoCorrecto[score] = "Felicidades, eres parte de la 6ta Generación de Laboratoria";
+		resultadoCorrecto[score] = "Felicidades, eres parte de la 6ta Generación de Laboratoria \n";
 		score +=1;
 
 	}
 	else {
-		resultadoIncorrecto[score] = "Sigue intentando, tú formas parte de la 6ta Generación";
+		resultadoIncorrecto[score] = "Sigue intentando, tú formas parte de la 6ta Generación\n";
 	}
 	if (document.getElementById("answer5").checked) {
-		resultadoCorrecto[score] = "Correcto, aprenderas JavaScript de pies a cabeza";
+		resultadoCorrecto[score] = "Correcto, aprenderas JavaScript de pies a cabeza\n";
 		score +=1;
 
 	}
 	else {
-		resultadoIncorrecto[score] = "No has puesto mucha atención, Cuidado! Estas aprendiendo JS";
+		resultadoIncorrecto[score] = "No has puesto mucha atención, Cuidado! Estas aprendiendo JS\n";
 	}
 	if (document.getElementById("answer8").checked) {
-		resultadoCorrecto[score] = "¡10 Semanas son tiempo suficiente para aprender las bases que necesitas, Suerte!";
+		resultadoCorrecto[score] = "¡10 Semanas son tiempo suficiente para aprender las bases que necesitas, Suerte!\n";
 		score +=1;
 
 	}
 	else {
-		resultadoIncorrecto[score] = "Son solo 10 semanas para que puedas aprender las bases necesarias.";
+		resultadoIncorrecto[score] = "Son solo 10 semanas para que puedas aprender las bases necesarias.\n";
 	}
 
 	mostrar.innerHTML = "Aciertos: " + score;
+	mostrar2.innerHTML = "Errores: " + (3-score);
 	posicionScore.appendChild(mostrar);
+	posicionScore.appendChild(mostrar2);
+	mostrar3.innerHTML = resultadoCorrecto;
+	mostrar4.innerHTML = resultadoIncorrecto;
+	posicionScore.appendChild(mostrar3);
+	posicionScore.appendChild(mostrar4);
 	console.log(resultadoCorrecto);
 	console.log(resultadoIncorrecto);
 	console.log(score);
