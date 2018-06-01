@@ -1,7 +1,9 @@
 var username = document.getElementById("name");
 var mensaje = document.getElementById("bienvenida");
 var posicion = document.getElementById("bienvenida");
-
+var score = 0;
+var resultadoCorrecto = [];
+var resultadoIncorrecto = [];
 function	intro(){
 	mensaje.innerHTML = "Bienvenid@ " + username.value;
 	var reto = document.createElement("p");
@@ -32,50 +34,43 @@ function trivia(){
 		parent.removeChild(child2);
 		parent.removeChild(child3);
 		document.getElementById("contenedor").style.visibility = "visible";
+		document.getElementById("pregunta1").style.visibility = "visible";
+	}
 
-		/*var pregunta1 =	 document.cuestionario.pregunta1.value; //NOMBRAR VARIABLES DE LAS PREGUNTAS Y DEL PUNTAJE
-    var pregunta2 = document.cuestionario.pregunta2.value;
-    var pregunta3 = document.cuestionario.pregunta3.value;
-    var correcto = 0;
-//INDICAMOS CUANDO ES QUE SE SUMA UN PUNTO AL PUNTAJE CON LA RESPUESTA CORRECTA
-          if (pregunta1 == "Crear un archivo CSS separado y enlazarlo mediante una etiqueta HTML." ) {
-            correcto ++;
-          }
+function comprobar(){
 
-          if (pregunta2 == "Regresa el valor que contiene el div." ) {
-            correcto ++;
-          }
+	var mostrar = document.createElement("div");
+	var posicionScore = document.getElementById("contenedor");
 
-          if (pregunta3 == "margin" ) {
-            correcto ++;
-          }
-//ESTO ES UN ARREGLO PARA QUE SE PUEDA NOMBRAR UNA VARIABLE Y DEFINIR VARIOS RESULTADOS DE UNA VEZ, ESTOS VALORES TIENEN RANGOS, EMPEZANDO POR EL 0
-      var resultados = ["¡Excelente! Eres una Samurai Coder.",
-      "¡Muy bien! Puedes mejorar aún más, así sigue afilando tu katana.",
-      "¡Te falta mucha práctica, pequeña saltamontes! Por el momento regresa al dōjō para seguir entrenando.",
-      "GAMEOVER Has caido en batalla por tu inexperiencia."];
-      var imagenes = ["https://berenicelemus.com/trivia/images/onnaBugeisha0.jpg", "https://berenicelemus.com/trivia/images/onnaBugeisha1.jpg", "https://berenicelemus.com/trivia/images/onnaBugeisha2.jpg", "https://berenicelemus.com/trivia/images/onnaBugeisha3.jpg"];
-//LO MISMO SE HACE CON UN ARREGLO PARA VARIABLE IMAGENES PARA TENER UN TEXTO CON IMAGENES
-    //DESPUES DEFINIMOS UNA VARIABLE CON NOMBRE DE RANGO PARA EVALUAR LOS RESULTADOS DEL PUNTAJE DE MANERA CONDICIONAL, PARA QUE A CADA PUNTAJE, LE CORRESPONDA UNA RESPUESTA Y UNA IMAGEN COMO RESULTADO
-      var rango;
-           if (correcto > 2) {
-             rango = 0
-           }
+	document.getElementById("contenedor").style.visibility = "visible";
+	if (document.getElementById("answer3").checked) {
+		resultadoCorrecto[score] = "Felicidades, eres parte de la 6ta Generación de Laboratoria";
+		score +=1;
 
-           rango;
-           if (correcto > 1 && correcto <3) {
-             rango = 1
-           }
+	}
+	else {
+		resultadoIncorrecto[score] = "Sigue intentando, tú formas parte de la 6ta Generación";
+	}
+	if (document.getElementById("answer5").checked) {
+		resultadoCorrecto[score] = "Correcto, aprenderas JavaScript de pies a cabeza";
+		score +=1;
 
-           rango;
-           if (correcto < 2 && correcto > 0) {
-           rango = 2
-           }
+	}
+	else {
+		resultadoIncorrecto[score] = "No has puesto mucha atención, Cuidado! Estas aprendiendo JS";
+	}
+	if (document.getElementById("answer8").checked) {
+		resultadoCorrecto[score] = "¡10 Semanas son tiempo suficiente para aprender las bases que necesitas, Suerte!";
+		score +=1;
 
-           rango;
-           if (correcto < 1) {
-           rango = 3
-				 }*/
+	}
+	else {
+		resultadoIncorrecto[score] = "Son solo 10 semanas para que puedas aprender las bases necesarias.";
+	}
 
-
+	mostrar.innerHTML = "Aciertos: " + score;
+	posicionScore.appendChild(mostrar);
+	console.log(resultadoCorrecto);
+	console.log(resultadoIncorrecto);
+	console.log(score);
 }
